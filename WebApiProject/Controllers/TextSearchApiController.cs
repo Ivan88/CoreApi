@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using Interfaces;
 using Microsoft.AspNetCore.Mvc;
 using Models;
 using WebApiProject.Models;
@@ -12,13 +11,6 @@ namespace WebApiProject.Controllers
     [ApiController]
     public class TextSearchApiController : ControllerBase
     {
-		private readonly IDbContext dbContext;
-
-		public TextSearchApiController(IDbContext dbContext)
-		{
-			this.dbContext = dbContext;
-		}
-
 		[HttpPost("/document")]
 		public async Task<ActionResult> UploadDocument(IFormFile file)
 		{
