@@ -1,4 +1,4 @@
-﻿namespace WebApiProject.Models
+﻿namespace Models
 {
 	public class TextSearchResult
 	{

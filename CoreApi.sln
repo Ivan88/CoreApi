@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2003
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApiProject", "WebApiProject\WebApiProject.csproj", "{4785373E-C8D8-43EB-904C-5F92939B22AD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApiService", "WebApiProject\WebApiService.csproj", "{4785373E-C8D8-43EB-904C-5F92939B22AD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL", "DAL\DAL.csproj", "{CD4E71AC-6523-41E8-8E47-625153FA6451}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataBaseService", "DAL\DataBaseService.csproj", "{CD4E71AC-6523-41E8-8E47-625153FA6451}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interfaces", "Interfaces\Interfaces.csproj", "{D54AE343-5BBD-47CB-85DB-D113988B1CA2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Interfaces", "Interfaces\Interfaces.csproj", "{D54AE343-5BBD-47CB-85DB-D113988B1CA2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csproj", "{72F3F256-2316-4DE2-A4B3-2F67F2A604FE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{D54AE343-5BBD-47CB-85DB-D113988B1CA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D54AE343-5BBD-47CB-85DB-D113988B1CA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D54AE343-5BBD-47CB-85DB-D113988B1CA2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{72F3F256-2316-4DE2-A4B3-2F67F2A604FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{72F3F256-2316-4DE2-A4B3-2F67F2A604FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{72F3F256-2316-4DE2-A4B3-2F67F2A604FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{72F3F256-2316-4DE2-A4B3-2F67F2A604FE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

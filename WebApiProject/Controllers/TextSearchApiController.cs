@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
 using Interfaces;
 using Microsoft.AspNetCore.Mvc;
+using Models;
 using WebApiProject.Models;
 
 namespace WebApiProject.Controllers
@@ -18,7 +20,7 @@ namespace WebApiProject.Controllers
 		}
 
 		[HttpPost("/document")]
-		public ActionResult UploadDocument()
+		public async Task<ActionResult> UploadDocument(IFormFile file)
 		{
 			return Ok();
 		}
