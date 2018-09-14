@@ -7,16 +7,16 @@ EXPOSE 80
 
 FROM microsoft/dotnet:2.1-sdk-nanoserver-sac2016 AS build
 WORKDIR /src
-COPY ["WebApiProject/WebApiProject.csproj", "WebApiProject/"]
-RUN dotnet restore "WebApiProject/WebApiProject.csproj"
+COPY ["WebApiService/WebApiService.csproj", "WebApiService/"]
+RUN dotnet restore "WebApiService/WebApiService.csproj"
 COPY . .
-WORKDIR "/src/WebApiProject"
-RUN dotnet build "WebApiProject.csproj" -c Release -o /app
+WORKDIR "/src/WebApiService"
+RUN dotnet build "WebApiService.csproj" -c Release -o /app
 
 FROM build AS publish
-RUN dotnet publish "WebApiProject.csproj" -c Release -o /app
+RUN dotnet publish "WebApiService.csproj" -c Release -o /app
 
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app .
-ENTRYPOINT ["dotnet", "WebApiProject.dll"]
+ENTRYPOINT ["dotnet", "WebApiService.dll"]

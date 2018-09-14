@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Models;
 using RabbitMQ.Client;
+using RabbitMQ.Client.Framing;
 using WebApiProject.Models;
 
 namespace WebApiProject.Controllers
@@ -14,6 +15,8 @@ namespace WebApiProject.Controllers
     public class TextSearchApiController : ControllerBase
     {
 		private readonly ConnectionFactory _connectionFactory;
+
+		private const string _queueName = "documentQueue";
 
 		public TextSearchApiController()
 		{
@@ -32,9 +35,13 @@ namespace WebApiProject.Controllers
 					using (var connection = _connectionFactory.CreateConnection())
 					using (var channel = connection.CreateModel())
 					{
-						channel.QueueDeclare("documentQueue", false, false, false);
+						channel.QueueDeclare(_queueName, false, false, false);
 
-						channel.BasicPublish("", "documentQueue", null, stream.GetBuffer());
+						var properties = channel.CreateBasicProperties();
+						properties.Headers.Add("fileName", file.Name);
+						properties.Persistent = true;
+
+						channel.BasicPublish("", _queueName, properties, stream.GetBuffer());
 					}
 					return Ok();
 				}
