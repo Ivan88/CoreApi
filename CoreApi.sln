@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2003
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApiService", "WebApiProject\WebApiService.csproj", "{4785373E-C8D8-43EB-904C-5F92939B22AD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApiService", "WebApiService\WebApiService.csproj", "{4785373E-C8D8-43EB-904C-5F92939B22AD}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataBaseService", "DAL\DataBaseService.csproj", "{CD4E71AC-6523-41E8-8E47-625153FA6451}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataBaseService", "DataBaseService\DataBaseService.csproj", "{CD4E71AC-6523-41E8-8E47-625153FA6451}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Interfaces", "Interfaces\Interfaces.csproj", "{D54AE343-5BBD-47CB-85DB-D113988B1CA2}"
 EndProject
