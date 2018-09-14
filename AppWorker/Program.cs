@@ -22,7 +22,7 @@ namespace AppWorker
 				consumer.Received += (model, ea) =>
 				{
 					var body = ea.Body;
-					var fileName = ea.BasicProperties.Headers["fileName"] ?? String.Empty;
+					var fileName = ea.BasicProperties.Headers["fileName"] ?? Guid.NewGuid().ToString();
 
 					//save file
 
