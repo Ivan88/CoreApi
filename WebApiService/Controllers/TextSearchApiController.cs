@@ -5,7 +5,6 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Models;
 using RabbitMQ.Client;
-using RabbitMQ.Client.Framing;
 using WebApiProject.Models;
 
 namespace WebApiProject.Controllers
