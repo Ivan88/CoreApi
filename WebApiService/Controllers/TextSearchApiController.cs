@@ -57,5 +57,10 @@ namespace WebApiProject.Controllers
 
 			return Ok();
 		}
+
+        public ActionResult<string> Ping()
+        {
+            return Ok("Pong");
+        }
     }
 }
