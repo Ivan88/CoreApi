@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.IO;
 using Interfaces;
-using Models;
 
 namespace DAL
 {
@@ -19,9 +18,9 @@ namespace DAL
 			throw new NotImplementedException();
 		}
 
-		public IEnumerable<TextSearchResult> FindText(string text)
-		{
-			throw new NotImplementedException();
-		}
+		//public IEnumerable<TextSearchResult> FindText(string text)
+		//{
+		//	throw new NotImplementedException();
+		//}
 	}
 }
