@@ -21,16 +21,19 @@
 #COPY --from=publish /app .
 #ENTRYPOINT ["dotnet", "WebApiService.dll"]
 
-
-
-FROM microsoft/dotnet:2.1-sdk
+FROM microsoft/dotnet:sdk AS build-env
 WORKDIR /app
 
-# copy csproj and restore as distinct layers
+# Copy csproj and restore as distinct layers
 COPY *.csproj ./
 RUN dotnet restore
 
-# copy and build everything else
+# Copy everything else and build
 COPY . ./
 RUN dotnet publish -c Release -o out
-ENTRYPOINT ["dotnet", "out/WebApiService.dll"]
+
+# Build runtime image
+FROM microsoft/dotnet:aspnetcore-runtime
+WORKDIR /app
+COPY --from=build-env /app/out .
+ENTRYPOINT ["dotnet", "WebApiService.dll"]

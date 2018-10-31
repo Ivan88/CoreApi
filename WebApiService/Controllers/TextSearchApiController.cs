@@ -9,15 +9,15 @@ using WebApiProject.Models;
 
 namespace WebApiProject.Controllers
 {
-	[Route("api/textsearch")]
+	[Route("api/[controller]")]
     [ApiController]
-    public class TextSearchApiController : ControllerBase
+    public class TextSearchController : ControllerBase
     {
 		private readonly ConnectionFactory _connectionFactory;
 
 		private const string _queueName = "documentQueue";
 
-		public TextSearchApiController()
+		public TextSearchController()
 		{
 			_connectionFactory = new ConnectionFactory { HostName = "localhost" };
 		}
