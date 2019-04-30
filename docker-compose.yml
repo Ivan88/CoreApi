@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+
+  applicants.api:
+    image: webapiservice
+    build:
+      context: ./webapiservice
+      dockerfile: Dockerfile
+    ports: 
+    - "9000:80"
+    depends_on:
+    - mongo
+    container_name: webapiservice
+
+  mongo:
+    image: mongo
+    ports:
+    - "27017:27017"
+
+  rabbitmq:
+    image: rabbitmq:3-management
+    ports:
+    - "15672:15672"
+    container_name: rabbitmq
