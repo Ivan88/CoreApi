@@ -10,13 +10,8 @@ services:
     ports: 
     - "9000:80"
     depends_on:
-    - mongo
+    - rabbitmq
     container_name: webapiservice
-
-  mongo:
-    image: mongo
-    ports:
-    - "27017:27017"
 
   rabbitmq:
     image: rabbitmq:3-management

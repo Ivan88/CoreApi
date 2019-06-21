@@ -1,36 +1,25 @@
-﻿using System;
-using RabbitMQ.Client;
-using RabbitMQ.Client.Events;
+﻿using Interfaces;
+using Models;
+using System.Collections.Generic;
+using System.Text;
 
 namespace AppWorker
 {
-	class Program
+	public class Program
 	{
-		private static ConnectionFactory _connectionFactory;
-		private const string _queueName = "documentQueue";
+		private static readonly IMessageBrocker _messageBrocker;
+
+		private static readonly List<string> docs = new List<string>();
 
 		static void Main(string[] args)
 		{
-			_connectionFactory = new ConnectionFactory { HostName = "localhost" };
+			_messageBrocker.Subscribe("documentsQueue", HandleReceiving);
+		}
 
-			using (var connection = _connectionFactory.CreateConnection())
-			using (var channel = connection.CreateModel())
-			{
-				channel.QueueDeclare(_queueName, false, false, false, null);
-
-				var consumer = new EventingBasicConsumer(channel);
-				consumer.Received += (model, ea) =>
-				{
-					var body = ea.Body;
-					var fileName = ea.BasicProperties.Headers["fileName"] ?? Guid.NewGuid().ToString();
-
-					//save file
-
-					channel.BasicAck(deliveryTag: ea.DeliveryTag, multiple: false);
-				};
-
-				channel.BasicConsume(_queueName, autoAck: true, consumer : consumer);
-			}
+		private static void HandleReceiving(MessageWrapper messageWrapper)
+		{
+			docs.Add(Encoding.UTF8.GetString(messageWrapper.Body));
+			//send to elastic search
 		}
 	}
 }

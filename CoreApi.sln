@@ -16,6 +16,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		docker-compose.yml = docker-compose.yml
 	EndProjectSection
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MessageBus", "MessageBus\MessageBus.csproj", "{5E57FD1A-3519-48BC-9FB6-50EF2B42D809}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csproj", "{ACE7D7DD-C4DB-442E-88F4-77FB9FE84CC7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -38,6 +42,14 @@ Global
 		{0BDD723B-2CDA-48A3-972D-3111E61E1CF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0BDD723B-2CDA-48A3-972D-3111E61E1CF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0BDD723B-2CDA-48A3-972D-3111E61E1CF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5E57FD1A-3519-48BC-9FB6-50EF2B42D809}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5E57FD1A-3519-48BC-9FB6-50EF2B42D809}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5E57FD1A-3519-48BC-9FB6-50EF2B42D809}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5E57FD1A-3519-48BC-9FB6-50EF2B42D809}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ACE7D7DD-C4DB-442E-88F4-77FB9FE84CC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACE7D7DD-C4DB-442E-88F4-77FB9FE84CC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACE7D7DD-C4DB-442E-88F4-77FB9FE84CC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACE7D7DD-C4DB-442E-88F4-77FB9FE84CC7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

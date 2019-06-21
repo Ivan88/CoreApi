@@ -1,25 +1,23 @@
-﻿using System;
+﻿using Interfaces;
+using Microsoft.AspNetCore.Mvc;
+using Models;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Models;
-using RabbitMQ.Client;
 using WebApiProject.Models;
 
 namespace WebApiProject.Controllers
 {
 	[Route("api/[controller]")]
-    [ApiController]
-    public class TextSearchController : ControllerBase
-    {
-		private readonly ConnectionFactory _connectionFactory;
+	[ApiController]
+	public class TextSearchController : ControllerBase
+	{
+		private readonly IMessageBrocker _messageBrocker;
 
-		private const string _queueName = "documentQueue";
-
-		public TextSearchController()
+		public TextSearchController(IMessageBrocker messageBrocker)
 		{
-			_connectionFactory = new ConnectionFactory { HostName = "localhost" };
+			_messageBrocker = messageBrocker;
 		}
 
 		[HttpPost("/document")]
@@ -31,17 +29,8 @@ namespace WebApiProject.Controllers
 				{
 					await file.CopyToAsync(stream, new System.Threading.CancellationToken());
 
-					using (var connection = _connectionFactory.CreateConnection())
-					using (var channel = connection.CreateModel())
-					{
-						channel.QueueDeclare(_queueName, false, false, false);
-
-						var properties = channel.CreateBasicProperties();
-						properties.Headers.Add("fileName", file.Name);
-						properties.Persistent = true;
-
-						channel.BasicPublish("", _queueName, properties, stream.GetBuffer());
-					}
+					_messageBrocker.Publish(stream.GetBuffer(), new[] { new Tuple<string, object>("filename", file.FileName) }, "documentsQueue");
+					
 					return Ok();
 				}
 			}
@@ -55,13 +44,15 @@ namespace WebApiProject.Controllers
 			if (String.IsNullOrEmpty(text))
 				return BadRequest("Incorrect input parameter.");
 
+			//byte[] documentsByte = _messageBrocker.Receive("documentsQueue");
+
 			return Ok();
 		}
 
 		[HttpGet("/ping")]
-        public ActionResult<string> Ping()
-        {
-            return Ok("pong");
-        }
-    }
+		public ActionResult<string> Ping()
+		{
+			return Ok("pong");
+		}
+	}
 }
