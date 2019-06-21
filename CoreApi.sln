@@ -5,8 +5,6 @@ VisualStudioVersion = 16.0.28803.202
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApiService", "WebApiService\WebApiService.csproj", "{4785373E-C8D8-43EB-904C-5F92939B22AD}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataBaseService", "DataBaseService\DataBaseService.csproj", "{CD4E71AC-6523-41E8-8E47-625153FA6451}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Interfaces", "Interfaces\Interfaces.csproj", "{D54AE343-5BBD-47CB-85DB-D113988B1CA2}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppWorker", "AppWorker\AppWorker.csproj", "{0BDD723B-2CDA-48A3-972D-3111E61E1CF5}"
@@ -18,7 +16,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MessageBus", "MessageBus\MessageBus.csproj", "{5E57FD1A-3519-48BC-9FB6-50EF2B42D809}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csproj", "{ACE7D7DD-C4DB-442E-88F4-77FB9FE84CC7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Models", "Models\Models.csproj", "{ACE7D7DD-C4DB-442E-88F4-77FB9FE84CC7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -30,10 +28,6 @@ Global
 		{4785373E-C8D8-43EB-904C-5F92939B22AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4785373E-C8D8-43EB-904C-5F92939B22AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4785373E-C8D8-43EB-904C-5F92939B22AD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{CD4E71AC-6523-41E8-8E47-625153FA6451}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CD4E71AC-6523-41E8-8E47-625153FA6451}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CD4E71AC-6523-41E8-8E47-625153FA6451}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CD4E71AC-6523-41E8-8E47-625153FA6451}.Release|Any CPU.Build.0 = Release|Any CPU
 		{D54AE343-5BBD-47CB-85DB-D113988B1CA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{D54AE343-5BBD-47CB-85DB-D113988B1CA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D54AE343-5BBD-47CB-85DB-D113988B1CA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
