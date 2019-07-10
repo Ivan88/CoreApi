@@ -8,5 +8,7 @@ namespace Interfaces
 	{
 		void Publish(byte[] message, IEnumerable<Tuple<string, object>> headers, string queueName);
 		void Subscribe(string queueName, Action<MessageWrapper> action);
+		byte[] PublishAndWait(byte[] message, IEnumerable<Tuple<string, object>> headers, string queueName);
+		void SubscribeForReplying(string queueName, Func<MessageWrapper, byte[]> func);
 	}
 }

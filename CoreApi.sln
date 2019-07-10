@@ -5,18 +5,10 @@ VisualStudioVersion = 16.0.28803.202
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebApiService", "WebApiService\WebApiService.csproj", "{4785373E-C8D8-43EB-904C-5F92939B22AD}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Interfaces", "Interfaces\Interfaces.csproj", "{D54AE343-5BBD-47CB-85DB-D113988B1CA2}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AppWorker", "AppWorker\AppWorker.csproj", "{0BDD723B-2CDA-48A3-972D-3111E61E1CF5}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D6350D90-023E-4015-8D18-1418E82D28D9}"
 	ProjectSection(SolutionItems) = preProject
 		docker-compose.yml = docker-compose.yml
 	EndProjectSection
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MessageBus", "MessageBus\MessageBus.csproj", "{5E57FD1A-3519-48BC-9FB6-50EF2B42D809}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Models", "Models\Models.csproj", "{ACE7D7DD-C4DB-442E-88F4-77FB9FE84CC7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -28,22 +20,6 @@ Global
 		{4785373E-C8D8-43EB-904C-5F92939B22AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4785373E-C8D8-43EB-904C-5F92939B22AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4785373E-C8D8-43EB-904C-5F92939B22AD}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D54AE343-5BBD-47CB-85DB-D113988B1CA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D54AE343-5BBD-47CB-85DB-D113988B1CA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D54AE343-5BBD-47CB-85DB-D113988B1CA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D54AE343-5BBD-47CB-85DB-D113988B1CA2}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0BDD723B-2CDA-48A3-972D-3111E61E1CF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0BDD723B-2CDA-48A3-972D-3111E61E1CF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0BDD723B-2CDA-48A3-972D-3111E61E1CF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0BDD723B-2CDA-48A3-972D-3111E61E1CF5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5E57FD1A-3519-48BC-9FB6-50EF2B42D809}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5E57FD1A-3519-48BC-9FB6-50EF2B42D809}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5E57FD1A-3519-48BC-9FB6-50EF2B42D809}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5E57FD1A-3519-48BC-9FB6-50EF2B42D809}.Release|Any CPU.Build.0 = Release|Any CPU
-		{ACE7D7DD-C4DB-442E-88F4-77FB9FE84CC7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{ACE7D7DD-C4DB-442E-88F4-77FB9FE84CC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{ACE7D7DD-C4DB-442E-88F4-77FB9FE84CC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{ACE7D7DD-C4DB-442E-88F4-77FB9FE84CC7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

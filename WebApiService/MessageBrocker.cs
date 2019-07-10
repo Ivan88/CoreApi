@@ -1,5 +1,4 @@
-﻿using Interfaces;
-using Models;
+﻿using Models;
 using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 using System;
@@ -8,7 +7,7 @@ using System.Text;
 
 namespace MessageBus
 {
-	public class MessageBrocker : IMessageBrocker
+	public class MessageBrocker
 	{
 		private readonly ConnectionFactory _connectionFactory;
 

@@ -1,9 +1,10 @@
-﻿using Interfaces;
+﻿using MessageBus;
 using Microsoft.AspNetCore.Mvc;
 using Models;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Text;
 using System.Threading.Tasks;
 using WebApiProject.Models;
 
@@ -13,9 +14,9 @@ namespace WebApiProject.Controllers
 	[ApiController]
 	public class TextSearchController : ControllerBase
 	{
-		private readonly IMessageBrocker _messageBrocker;
+		private readonly MessageBrocker _messageBrocker;
 
-		public TextSearchController(IMessageBrocker messageBrocker)
+		public TextSearchController(MessageBrocker messageBrocker)
 		{
 			_messageBrocker = messageBrocker;
 		}
@@ -44,9 +45,9 @@ namespace WebApiProject.Controllers
 			if (String.IsNullOrEmpty(text))
 				return BadRequest("Incorrect input parameter.");
 
-			//byte[] documentsByte = _messageBrocker.Receive("documentsQueue");
+			byte[] result = _messageBrocker.PublishAndWait(null, null, "getDocumentsQueue");
 
-			return Ok();
+			return Ok(Encoding.UTF8.GetString(result));
 		}
 
 		[HttpGet("/ping")]
