@@ -13,6 +13,14 @@ services:
     - rabbitmq
     container_name: webapiservice
 
+  app.worker:
+    image: "appworker"
+  build:
+    context: ./appworker
+    dockerfile: Dockerfile
+  depends_on:
+  - rabbitmq
+
   rabbitmq:
     image: rabbitmq:3-management
     ports:

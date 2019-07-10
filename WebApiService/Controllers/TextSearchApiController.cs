@@ -16,9 +16,9 @@ namespace WebApiProject.Controllers
 	{
 		private readonly MessageBrocker _messageBrocker;
 
-		public TextSearchController(MessageBrocker messageBrocker)
+		public TextSearchController()//MessageBrocker messageBrocker)
 		{
-			_messageBrocker = messageBrocker;
+			_messageBrocker = new MessageBrocker("localhost");
 		}
 
 		[HttpPost("/document")]
